@@ -13,7 +13,7 @@
           <a class="nav-link" href="<?php echo base_url(); ?>">Beranda</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pengajuan</a>
+          <a class="nav-link" href="<?php echo base_url(); ?>pengajuan">Pengajuan</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url(); ?>cek-laporan">Cek Laporan</a>

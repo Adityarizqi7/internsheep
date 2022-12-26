@@ -55,3 +55,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 // Route User
 $route['cek-laporan'] = 'Student/cekLaporan';
+$route['pengajuan'] = 'Student/pengajuan';
