@@ -1,0 +1,22 @@
+main {
+    padding-bottom: 8rem;
+}
+
+main > .headline {
+    padding-top: 7rem;
+}
+main > .content {
+    padding-top: 10rem;
+}
+
+@media only screen and (max-width: 639px) {
+    main {
+        padding-bottom: 3rem;
+    }
+    main > .headline {
+        padding-top: 3rem;
+    }
+    main > .content {
+        padding-top: 5rem;
+    }
+}

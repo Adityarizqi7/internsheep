@@ -1,0 +1,44 @@
+main {
+    padding: 0 2rem 8rem 2rem;
+}
+
+main > .headline {
+    padding-top: 7rem;
+}
+main > .content {
+    padding-top: 4rem;
+}
+
+.search-found-wrapper, .search-not-found-wrapper {
+    margin-top: 7rem;
+}
+.search-found-wrapper > .card-data {
+    box-shadow: 0px 0px 14px 8px rgba(255, 131, 3, 0.2);
+}
+.search-found-wrapper > .card-data > .detail-data {
+    margin-top: 3rem;
+}
+
+@media only screen and (max-width: 639px) {
+    main {
+        padding: 0 1rem 7rem 1rem;
+    }
+    main > .headline {
+        padding-top: 3rem;
+    }
+    main > .content {
+        padding-top: 2rem;
+    }
+
+    .search-found-wrapper > .card-data {
+        width: 100% !important;
+    }
+    .search-found-wrapper > .card-data > .detail-data {
+        width: 100% !important;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .content > form {
+        width: 100% !important;
+    }
+}
