@@ -19,29 +19,32 @@
       </button>
     </div>
   </div>
-  <div class="content d-flex align-items-center montserrat">
-    <div class="right-content">
-      <h2 class="fs-4 fw-bolder">Tata cara pengajuan</h2>
-      <p>Simak langkah-langkah berikut untuk mengetahui cara melakukan pengajuan</p>
-      <nav class="mt-5">
-        <ul>
-          <li class="mb-5">
-            <h3 class="fs-5 fw-bold">Siapkan semua berkas-berkas yang diperlukan</h3>
-            <p>Berkas yang diperlukan yaitu meliputi surat pengajuan dan surat penerimaan dari perusahaan tempat berlangsungnya magang atau praktik kerja</p>
-          </li>
-          <li class="mb-5">
-            <h3 class="fs-5 fw-bold">Buka halaman pengajuan</h3>
-            <p>Silahkan buka halaman pengajuan pada navigation bar atau klik disini</p>
-          </li>
-          <li class="mb-5">
-            <h3 class="fs-5 fw-bold">Isikan semua form dengan benar</h3>
-            <p>Saat melakukan pengisian pastikan data diri dan berkas yang diisikan pada formulir sudah lengkap dan benar. Apabila sudah terisi semua silahka tekan tombol submit</p>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <div class="left-content ms-5 d-lg-block d-none">
-      <img src="assets/image/user-guide-illustration.png" />
+
+  <div class="container montserrat">
+    <div class="row align-items-center">
+      <div class="col">
+        <h2 class="fs-4 fw-bolder">Tata cara pengajuan</h2>
+        <p>Simak langkah-langkah berikut untuk mengetahui cara melakukan pengajuan</p>
+        <nav class="mt-5">
+          <ul>
+            <li class="mb-5">
+              <h3 class="fs-5 fw-bold">Siapkan semua berkas-berkas yang diperlukan</h3>
+              <p>Berkas yang diperlukan yaitu meliputi surat pengajuan dan surat penerimaan dari perusahaan tempat berlangsungnya magang atau praktik kerja</p>
+            </li>
+            <li class="mb-5">
+              <h3 class="fs-5 fw-bold">Buka halaman pengajuan</h3>
+              <p>Silahkan buka halaman pengajuan pada navigation bar atau klik disini</p>
+            </li>
+            <li class="mb-5">
+              <h3 class="fs-5 fw-bold">Isikan semua form dengan benar</h3>
+              <p>Saat melakukan pengisian pastikan data diri dan berkas yang diisikan pada formulir sudah lengkap dan benar. Apabila sudah terisi semua silahka tekan tombol submit</p>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col">
+        <img src="assets/image/user-guide-illustration.png" />
+      </div>
     </div>
   </div>
 </main>
