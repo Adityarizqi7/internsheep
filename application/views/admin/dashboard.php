@@ -1,130 +1,129 @@
-<title>Dashboard - Admin GoLive</title>
+<!DOCTYPE html>
+<html lang="en">
 
-<section>
-    <div id="box-toast">
-        <?php echo $this->session->flashdata('message'); ?>
-    </div>
-    <h1 class="fs-2 my-3 fw-semibold poppins text-center text-decoration-underline">Dashboard Admin</h1>
-    <br />
-    <div class="table-hosting my-5">
-        <div class="d-flex justify-content-between">
-            <h3 class="fs-4 mb-5 fw-normal poppins">Daftar Item Hosting</h3>
-            <a href="<?php echo base_url()?>admin/hosting/create">
-                <button class="btn btn-primary poppins">Create</button>
-            </a>
-        </div>
-        <table class="table table-striped">
-            <thead class="poppins text-center">
-                <tr>
-                    <th scope="col">No</th>
-                    <th scope="col">Nama Hosting</th>
-                    <th scope="col">CPanel</th>
-                    <th scope="col">SSL</th>
-                    <th scope="col">Subdomain</th>
-                    <th scope="col">Storage</th>
-                    <th scope="col">Database</th>
-                    <th scope="col">Harga</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php 
-                    $nomor = 1;
-                    if($data_hosting) {
-                        foreach ($data_hosting as $item) {
-                            ?>
-                                <tr class="text-center jetbrains">
-                                    <th scope="row"><?= $nomor++ . "." ?></th>
-                                    <td><?= $item->nama_hosting; ?></td>
-                                    <td><?= hasIncluded($item->has_cpanel) ?></td>
-                                    <td><?= hasIncluded($item->has_ssl) ?></td>
-                                    <td><?= hasIncluded($item->has_subdomain) ?></td>
-                                    <td><?= formatBytes($item->has_storage) ?></td>
-                                    <td><?= $item->num_database; ?></td>
-                                    <td><?= rupiah($item->harga) ?></td>
-                                    <td class="d-flex justify-content-evenly">
-                                        <a href="<?php echo base_url("admin/hosting/".$item->id_hosting."/")?>edit" rel="noreferrer" class="box-button-detail">
-                                            <button id="edit_btn" type="button" class="btn btn-primary">
-                                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polygon points="14 2 18 6 7 17 3 17 3 13 14 2"></polygon><line x1="3" y1="22" x2="21" y2="22"></line></svg>
-                                                Edit
-                                            </button>
-                                        </a>
-                                        <a href="<?php echo base_url('Admin/delete/'.$item->id_hosting) ?>" class="box-button-detail">
-                                            <button id="delete_btn" type="button" class="btn btn-primary">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
-                                            </button>
-                                        </a>
-                                    </td>
-                                </tr>
-                            <?php
-                        }
-                    } else {
-                        ?>
-                            <div class="mx-auto my-5 w-full">
-                                <h1 class="jetbrains text-center fs-3">Hosting tidak tersedia</h1>
-                            </div>
-                        <?php
-                    }
-                ?>
-            </tbody>
-        </table>
-    </div>
-    
-    <br />
-    <hr />
-    <br />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, shrink-to-fit=no,user-scalable=0">
 
-    <div class="table-hosting my-5">
-        <div class="d-flex justify-content-between">
-            <h3 class="fs-4 mb-5 fw-normal poppins">Daftar Item Domain</h3>
-            <a href="<?php echo base_url()?>admin/domain/create">
-                <button class="btn btn-primary poppins">Create</button>
-            </a>
-        </div>
-        <table class="table table-striped">
-            <thead class="poppins text-center">
-                <tr>
-                    <th scope="col">No</th>
-                    <th scope="col">Nama Domain</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php 
-                    $nomor = 1;
-                    if($data_domain) {
-                        foreach ($data_domain as $item) {
-                            ?>
-                                <tr class="text-center jetbrains">
-                                    <th scope="row"><?= $nomor++ . "." ?></th>
-                                    <td><?= $item->nama_domain; ?></td>
-                                    <td class="d-flex justify-content-evenly">
-                                        <a href="<?php echo base_url("admin/domain/".$item->id_domain."/")?>edit" rel="noreferrer" class="box-button-detail">
-                                            <button id="edit_btn" type="button" class="btn btn-primary">
-                                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polygon points="14 2 18 6 7 17 3 17 3 13 14 2"></polygon><line x1="3" y1="22" x2="21" y2="22"></line></svg>
-                                                Edit
-                                            </button>
-                                        </a>
-                                        <a href="<?php echo base_url('Admin/deleteDomain/'.$item->id_domain) ?>" class="box-button-detail">
-                                            <button id="delete_btn" type="button" class="btn btn-primary">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
-                                            </button>
-                                        </a>
-                                    </td>
-                                </tr>
-                            <?php
-                        }
-                    } else {
-                        ?>
-                            <div class="mx-auto my-5 w-full">
-                                <h1 class="jetbrains text-center fs-3">Domain tidak tersedia</h1>
-                            </div>
-                        <?php
-                    }
-                ?>
-            </tbody>
-        </table>
-    </div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <br />
-</section>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/root.css" />
+
+    <title>Dashboard Admin</title>
+
+</head>
+
+<body>
+    <div id="root">
+        <nav class="navbar sticky-top navbar-expand-md bg-white shadow-sm py-4" style="padding-right: 17rem; padding-left: 17rem">
+            <div class="container-fluid">
+                <a href="<?php echo base_url(); ?>" class="d-flex align-items-center text-dark text-decoration-none">
+                    <img src="assets/image/icon.png" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation_bar" aria-controls="navigation_bar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse montserrat mt-3 mt-md-0" id="navigation_bar">
+                    <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <button type="button" class="me-sm-4 mb-sm-0 mb-3 button-primary text-white bg-orange-base">Log out</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="">
+            <div class="content d-flex justify-content-center montserrat mb-5">
+                <div class="">
+                    <h1 class="mb-3 display-5 fw-bold montserrat">Selamat Datang kembali!</h1>
+                    <p>Mari cek data terbaru tentang proses magang dan kerja praktik mahasiswa</p>
+                </div>
+            </div>
+
+            <div class="col-md-9 mx-auto col-lg-10">
+                <table class="table table-bordered align-middle table-hover">
+                    <thead>
+                        <tr class="thead">
+                            <th>NPM</th>
+                            <th>Nama Ketua</th>
+                            <th>Nama Perusahaan</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>
+                                <a href="" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>
+                                <a href="" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry the Bird</td>
+                            <td>twitter</td>
+                            <td>
+                                <a href="" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+
+        <footer class="w-100 py-4 flex-shrink-0 montserrat">
+            <div class="container py-4">
+                <div class="row gy-4 gx-5">
+                    <div class="col-lg-4 col-md-6">
+                        <a href="/" class="mb-3">
+                            <img src="assets/image/icon.png" />
+                        </a>
+                        <p class="text-muted mt-3">&copy; 2022</p>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <h5>Layanan Kami</h5>
+                        <ul class="nav flex-column mt-3">
+                            <li class="nav-item mb-3"><a href="<?php echo base_url(); ?>" class="nav-link p-0 text-muted">Beranda</a></li>
+                            <li class="nav-item mb-3"><a href="<?php echo base_url(); ?>" class="nav-link p-0 text-muted">Pengajuan</a></li>
+                            <li class="nav-item mb-3"><a href="<?php echo base_url(); ?>cek-laporan" class="nav-link p-0 text-muted">Cek Laporan</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+</html>
+<title>dashboard Admin</title>
+<link rel="stylesheet" href="<?= base_url(); ?>assets/css/index.css" />

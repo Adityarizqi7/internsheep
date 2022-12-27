@@ -11,7 +11,6 @@ class Student extends CI_Controller {
 
 	public function index()
 	{
-
 		$this->templates->student('student/index');
 	}
 	public function cekLaporan()
