@@ -63,6 +63,16 @@
 					<input type="email" class="form-control" name="email3" id="email3" placeholder="example@student" aria-describedby="email3">
 				</div>
 			</section>
+			<section class="mb-3 form-section mt-5">
+				<div class="heading-data d-flex gap-4 mb-4">
+					<h2 class="orange-base fw-bolder fs-5">04</h2>
+					<h2 class="fw-bolder fs-5">Nama Perusahaan</h2>
+				</div>
+				<div class="form-data mb-3">
+					<label for="perusahaan" class="form-label">Perusahaan</label>
+					<input type="text" class="form-control" name="perusahaan" id="perusahaan" placeholder="Angkasa Pura" aria-describedby="perusahaan">
+				</div>
+			</section>
 			<div class="text-center">
 				<button type="submit" class="w-100 mt-2 mx-auto button-primary text-white bg-orange-base">Submit Laporan</button>
 			</div>

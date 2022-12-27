@@ -11,16 +11,8 @@ class Pengajuan extends CI_Controller
         $this->load->library('form_validation');
     }
 
-    public function index()
-    {
-        $queryallAjuan = $this->Pengajuan_model->getAll();
-        $DATA = array('queryallAjuan' => $queryallAjuan);
-        $this->templates->display('dashboard', $DATA);
-    }
-
     public function add()
     {
-
         $hosting = $this->Pengajuan_model;
         $hosting->save();
 
@@ -36,31 +28,20 @@ class Pengajuan extends CI_Controller
 
     public function searchnpm()
     {
-        $data['keyword'] = $this->input->get('keyword');
-        $this->load->model('Pengajuan_model');
-
-        $data['search_result'] = $this->article_model->search($data['keyword']);
-
+        $this->load->model('SearchModel');
+        $keyword = $this->input->get('keyword');
+        $data = $this->SearchModel->ambil_data($keyword);
+        $data = array(
+            'keyword'    => $keyword,
+            'data'        => $data
+        );
         $this->load->view('cek-laporan', $data);
+
+        // $data['keyword'] = $this->input->get('keyword');
+        // $this->load->model('Pengajuan_model');
+
+        // $data['search_result'] = $this->article_model->search($data['keyword']);
+
+        // $this->load->view('cek-laporan', $data);
     }
-
-    // public function index()
-    // {
-    //     $data["pengajuan"] = $this->product_model->getAll();
-    //     $this->load->view("", $data);
-    // }
-
-    // public function add()
-    // {
-    //     $pengajuan = $this->Pengajuan_model;
-    //     $validation = $this->form_validation;
-    //     $validation->set_rules($pengajuan->rules());
-
-    //     if ($validation->run()) {
-    //         $pengajuan->save();
-    //         $this->session->set_flashdata('success', 'Pengajuan berhasil disimpan');
-    //     }
-
-    //     $this->load->view("student/index");
-    // }
 }

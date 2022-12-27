@@ -15,7 +15,7 @@ class Pengajuan_model extends CI_Model
     {
         $this->db->from($this->table);
         $this->db->order_by("id_pengajuan", "asc");
-        $this->db->select('id_pengajuan', 'npm1', 'nama1', 'email1', 'npm2', 'nama2', 'email2', 'npm3', 'nama3', 'email3');
+        $this->db->select('id_pengajuan, npm1, name1, email1, npm2, name2, email2, npm3, name3, email3, perusahaan');
         $query = $this->db->get();
         return $query->result();
     }
@@ -30,6 +30,13 @@ class Pengajuan_model extends CI_Model
         return $query->result();
     }
 
+    function getSpesificLaporan($id)
+    {
+        $this->db->where('npm1', $id);
+        $query = $this->db->get('pengajuan');
+        return $query->row();
+    }
+
     public function save()
     {
 
@@ -42,26 +49,34 @@ class Pengajuan_model extends CI_Model
             "email2" => $this->input->post('email2'),
             "npm3" => $this->input->post('npm3'),
             "name3" => $this->input->post('name3'),
-            "email3" => $this->input->post('email3')
+            "email3" => $this->input->post('email3'),
+            "perusahaan" => $this->input->post('perusahaan'),
         );
         $this->db->insert($this->table, $data);
     }
 
-    public function update()
-    {
+    // public function update()
+    // {
 
-        $data = array(
-            "npm1" => $this->input->post('npm1'),
-            "nama1" => $this->input->post('nama1'),
-            "email1" => $this->input->post('email1'),
-            "npm2" => $this->input->post('npm2'),
-            "nama2" => $this->input->post('nama2'),
-            "email2" => $this->input->post('email2'),
-            "npm3" => $this->input->post('npm3'),
-            "nama3" => $this->input->post('nama3'),
-            "email3" => $this->input->post('email3')
-        );
-        $this->db->where('id_pengajuan', $this->input->post('id_pengajuan'));
+    //     $data = array(
+    //         "npm1" => $this->input->post('npm1'),
+    //         "name1" => $this->input->post('name1'),
+    //         "email1" => $this->input->post('email1'),
+    //         "npm2" => $this->input->post('npm2'),
+    //         "name2" => $this->input->post('name2'),
+    //         "email2" => $this->input->post('email2'),
+    //         "npm3" => $this->input->post('npm3'),
+    //         "name3" => $this->input->post('name3'),
+    //         "email3" => $this->input->post('email3'),
+    //         "perusahaan" => $this->input->post('perusahaan'),
+    //     );
+    //     $this->db->where('id_pengajuan', $this->input->post('id_pengajuan'));
+    //     $this->db->update('pengajuan', $data);
+    // }
+
+    function update($id, $data)
+    {
+        $this->db->where('npm1', $id);
         $this->db->update('pengajuan', $data);
     }
 

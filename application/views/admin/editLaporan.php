@@ -42,41 +42,41 @@
 
         <main>
             <div class="content montserrat">
-                <form action="<?= base_url('Home/update') ?>" id="form-group" class="w-50 mx-auto">
+                <form action="<?= base_url('admin/editLaporan') ?>" id="form-group" class="w-50 mx-auto" method="POST">
                     <section class="mb-5 form-section">
                         <div class="heading-data d-flex gap-4 mb-4">
                             <h2 class="orange-base fw-bolder fs-5">01</h2>
                             <h2 class="fw-bolder fs-5">Data Ketua Kelompok</h2>
                         </div>
                         <div class="form-data mb-3">
-                            <label for="npm" class="form-label">NPM</label>
-                            <input type="number" class="form-control" name="npm" id="npm" placeholder="190817121" aria-describedby="npm">
+                            <label for="npm1" class="form-label">NPM</label>
+                            <input type="number" class="form-control" name="npm1" id="npm1" placeholder="190817121" aria-describedby="npm1" value="<?php echo $querySpesificLaporan->npm1 ?>">
                         </div>
                         <div class="form-data mb-3">
-                            <label for="nama" class="form-label">Nama Lengkap</label>
-                            <input type="text" class="form-control" name="nama" id="nama" placeholder="" aria-describedby="nama">
+                            <label for="name1" class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" name="name1" id="name1" placeholder="" aria-describedby="name1" value="<?php echo $querySpesificLaporan->name1 ?>">
                         </div>
                         <div class="form-data mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="example@student" aria-describedby="email">
+                            <label for="email1" class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email1" id="email1" placeholder="example@student" aria-describedby="email1" value="<?php echo $querySpesificLaporan->email1 ?>">
                         </div>
                     </section>
-                    <section class="mb-5 form-section">
+                    <section class=" mb-5 form-section">
                         <div class="heading-data d-flex gap-4 mb-4">
                             <h2 class="orange-base fw-bolder fs-5">02</h2>
                             <h2 class="fw-bolder fs-5">Data Anggota 1</h2>
                         </div>
                         <div class="form-data mb-3">
-                            <label for="npm" class="form-label">NPM</label>
-                            <input type="number" class="form-control" name="npm" id="npm" placeholder="190817121" aria-describedby="npm">
+                            <label for="npm2" class="form-label">NPM</label>
+                            <input type="number" class="form-control" name="npm2" id="npm2" placeholder="190817121" aria-describedby="npm2" value="<?php echo $querySpesificLaporan->npm2 ?>">
                         </div>
                         <div class="form-data mb-3">
-                            <label for="nama" class="form-label">Nama Lengkap</label>
-                            <input type="text" class="form-control" name="nama" id="nama" placeholder="" aria-describedby="nama">
+                            <label for="name2" class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" name="name2" id="name2" placeholder="" aria-describedby="name2" value="<?php echo $querySpesificLaporan->name2 ?>">
                         </div>
                         <div class="form-data mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="example@student" aria-describedby="email">
+                            <label for="email2" class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email2" id="email2" placeholder="example@student" aria-describedby="email2" value="<?php echo $querySpesificLaporan->email2 ?>">
                         </div>
                     </section>
                     <section class="mb-3 form-section">
@@ -85,16 +85,26 @@
                             <h2 class="fw-bolder fs-5">Data Anggota 2</h2>
                         </div>
                         <div class="form-data mb-3">
-                            <label for="npm" class="form-label">NPM</label>
-                            <input type="number" class="form-control" name="npm" id="npm" placeholder="190817121" aria-describedby="npm">
+                            <label for="npm3" class="form-label">NPM</label>
+                            <input type="number" class="form-control" name="npm3" id="npm3" placeholder="190817121" aria-describedby="npm3" value="<?php echo $querySpesificLaporan->npm3 ?>">
                         </div>
                         <div class="form-data mb-3">
-                            <label for="nama" class="form-label">Nama Lengkap</label>
-                            <input type="text" class="form-control" name="nama" id="nama" placeholder="" aria-describedby="nama">
+                            <label for="name3" class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" name="name3" id="name3" placeholder="" aria-describedby="name3" value="<?php echo $querySpesificLaporan->name3 ?>">
                         </div>
                         <div class="form-data mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="example@student" aria-describedby="email">
+                            <label for="email3" class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email3" id="email3" placeholder="example@student" aria-describedby="email3" value="<?php echo $querySpesificLaporan->email3 ?>">
+                        </div>
+                    </section>
+                    <section class="mb-3 form-section mt-5">
+                        <div class="heading-data d-flex gap-4 mb-4">
+                            <h2 class="orange-base fw-bolder fs-5">04</h2>
+                            <h2 class="fw-bolder fs-5">Nama Perusahaan</h2>
+                        </div>
+                        <div class="form-data mb-3">
+                            <label for="perusahaan" class="form-label">Perusahaan</label>
+                            <input type="text" class="form-control" name="perusahaan" id="perusahaan" placeholder="Angkasa Pura" aria-describedby="perusahaan" value="<?php echo $querySpesificLaporan->perusahaan ?>">
                         </div>
                     </section>
                     <div class="text-center">

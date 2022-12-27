@@ -59,4 +59,4 @@ $route['pengajuan'] = 'Student/pengajuan';
 
 // Route admin
 $route['dashboard'] = 'Admin/dashboard';
-$route['edit-laporan'] = 'Admin/editLaporan';
+$route['edit-laporan/(:any)'] = 'Admin/edit/$1';

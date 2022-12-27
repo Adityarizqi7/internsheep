@@ -43,6 +43,7 @@
         <main class="">
             <div class="content d-flex justify-content-center montserrat mb-5">
                 <div class="">
+                    <?= $this->session->flashdata('message'); ?>
                     <h1 class="mb-3 display-5 fw-bold montserrat">Selamat Datang kembali!</h1>
                     <p>Mari cek data terbaru tentang proses magang dan kerja praktik mahasiswa</p>
                 </div>
@@ -63,13 +64,15 @@
                         <?php $no = 1; ?>
                         <?php foreach ($queryallAjuan as $ajuan) : ?>
                             <tr>
-                                <td><?php $no++ ?></td>
+                                <td><?php echo $no++ ?></td>
                                 <td><?php echo $ajuan->npm1 ?></td>
-                                <td><?php echo $ajuan->nama1 ?></td>
-
+                                <td><?php echo $ajuan->name1 ?></td>
                                 <td>
-                                    <a href="" class="btn btn-primary btn-sm">Edit</a>
-                                    <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                    <?php echo $ajuan->perusahaan ?>
+                                </td>
+                                <td>
+                                    <a href="<?php base_url(); ?>edit-laporan/<?php echo $ajuan->npm1 ?>" class="btn btn-primary btn-sm">Edit</a>
+                                    <a href="<?php base_url() ?>admin/deleteLaporan/<?php echo $ajuan->id_pengajuan ?>" class="btn btn-danger btn-sm">Delete</a>
                                 </td>
                             </tr>
                         <?php endforeach ?>
