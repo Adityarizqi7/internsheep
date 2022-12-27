@@ -107,7 +107,7 @@
                     <div class="col-lg-2 col-md-6">
 
                     </div>
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-4 col-md-6 text-end">
                         <h5>Layanan Kami</h5>
                         <ul class="nav flex-column mt-3">
                             <li class="nav-item mb-3"><a href="<?php echo base_url(); ?>" class="nav-link p-0 text-muted">Beranda</a></li>
