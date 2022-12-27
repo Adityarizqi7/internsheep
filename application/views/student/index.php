@@ -6,7 +6,11 @@
     <h1 class="display-4 fw-bold montserrat">Daftarkan pengajuan magangmu <br /> sekarang juga!</h1>
     <p class="mt-4 montserrat">Kami menyediakan fitur untuk pencatatan mahasiswa yang akan atau sedang <br /> melakukan program magang atau praktik kerja lainnya</p>
     <div class="d-flex flex-sm-row flex-column justify-content-center montserrat">
-      <button type="button" class="me-sm-4 mb-sm-0 mb-3 button-primary text-white bg-orange-base">Ajukan Laporan</button>
+      <button type="button" class="me-sm-4 mb-sm-0 mb-3 button-primary text-white bg-orange-base">
+        <a href="<?= base_url() ?>pengajuan" class="text-decoration-none text-reset">
+          Ajukan Laporan
+        </a>
+      </button>
       <button type="button" class="border border-warning button-primary bg-white-base orange-base">
         <a href="<?= base_url() ?>cek-laporan" class="text-decoration-none text-reset">
           Cek Laporan
