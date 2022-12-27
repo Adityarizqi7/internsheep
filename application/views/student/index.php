@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="<?= base_url(); ?>assets/css/index.css" />
 
 <main class="px-4">
-  <div class="headline mx-auto text-center">
+  <div class="headline mx-auto text-center" style="margin-bottom: 10rem;">
     <div class="text-center"><?php echo $this->session->flashdata('message'); ?></div>
     <h1 class="display-6 fw-semibold montserrat">Daftarkan pengajuan magangmu <br /> sekarang juga!</h1>
     <p class="mt-4 montserrat">Kami menyediakan fitur untuk pencatatan mahasiswa yang akan atau sedang <br /> melakukan program magang atau praktik kerja lainnya</p>

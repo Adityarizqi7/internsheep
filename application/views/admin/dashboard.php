@@ -33,7 +33,7 @@
                 <div class="collapse navbar-collapse montserrat mt-3 mt-md-0" id="navigation_bar">
                     <ul class="navbar-nav ms-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <button type="button" class="me-sm-4 mb-sm-0 mb-3 button-primary text-white bg-orange-base">Log out</button>
+                            <a href="<?= base_url('admin/logout') ?>" type="button" class="me-sm-4 mb-sm-0 mb-3 button-primary text-white bg-orange-base text-decoration-none">Log out</a>
                         </li>
                     </ul>
                 </div>

@@ -105,4 +105,11 @@ class Admin extends CI_Controller
                     Data berhasil dihapus! </div>');
 		redirect('/dashboard');
 	}
+
+	public function logout()
+    {
+        $this->session->unset_userdata('username');
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You have been logged out!</div>');
+        redirect('/');
+    }
 }
