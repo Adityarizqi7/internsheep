@@ -52,6 +52,7 @@
                 <table class="table table-bordered align-middle table-hover">
                     <thead>
                         <tr class="thead">
+                            <th>No</th>
                             <th>NPM</th>
                             <th>Nama Ketua</th>
                             <th>Nama Perusahaan</th>
@@ -59,33 +60,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>
-                                <a href="" class="btn btn-primary btn-sm">Edit</a>
-                                <a href="" class="btn btn-danger btn-sm">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>
-                                <a href="" class="btn btn-primary btn-sm">Edit</a>
-                                <a href="" class="btn btn-danger btn-sm">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry the Bird</td>
-                            <td>twitter</td>
-                            <td>
-                                <a href="" class="btn btn-primary btn-sm">Edit</a>
-                                <a href="" class="btn btn-danger btn-sm">Delete</a>
-                            </td>
-                        </tr>
+                        <?php $no = 1; ?>
+                        <?php foreach ($queryallAjuan as $ajuan) : ?>
+                            <tr>
+                                <td><?php $no++ ?></td>
+                                <td><?php echo $ajuan->npm1 ?></td>
+                                <td><?php echo $ajuan->nama1 ?></td>
+
+                                <td>
+                                    <a href="" class="btn btn-primary btn-sm">Edit</a>
+                                    <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
                     </tbody>
                 </table>
             </div>

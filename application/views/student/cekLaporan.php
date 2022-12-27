@@ -1,5 +1,5 @@
 <title>Cek Laporan</title>
-<link rel="stylesheet" href="<?= base_url();?>assets/css/cekLaporan.css" />
+<link rel="stylesheet" href="<?= base_url(); ?>assets/css/cekLaporan.css" />
 
 <main>
 	<div class="headline mx-auto text-center">
@@ -8,16 +8,21 @@
 	</div>
 
 	<div class="content montserrat">
-		<form action="<?= base_url('Home/update') ?>" id="form-group" class="w-50 mx-auto">
+		<form get="GET" action="<?= base_url('Home/update') ?>" id="form-group" class="w-50 mx-auto">
 			<div class="mb-3">
-				<label for="npm" class="form-label">Masukkan NPM</label>
-				<input type="email" class="form-control" id="npm" placeholder="190817121" aria-describedby="npm">
+				<label for="npm1" class="form-label">Masukkan NPM</label>
+				<input type="search" class="form-control" name="npm1" id="npm1" placeholder="190817121" aria-describedby="npm1">
 			</div>
 			<div class="text-center">
 				<button type="submit" class="mt-sm-4 mt-2 mx-auto button-primary text-white bg-orange-base">Cek Laporan</button>
 			</div>
 		</form>
 	</div>
+
+	<?php if ($search_result) : ?>
+		<hr>
+
+	<?php endif; ?>
 
 	<!-- Tampilan ketika pencarian ditemukan -->
 	<!-- <div class="search-found-wrapper montserrat">
