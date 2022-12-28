@@ -1,5 +1,11 @@
 # Internsheep
 
+Almira Aurora Prameswaty [19081010137]
+Dio Farrel Putra Rachmawan [19081010144]
+Dede Ikhsan Dwi Saputra [19081010150]
+Pramudya Tamir Indra Permana [19081010167]
+Aditya Rizqi Ardhana [19081010178]
+
 
 Internsheep adalah website dengan fitur untuk pencatatan mahasiswa yang akan atau sedang
 melakukan program magang atau praktik kerja lainnya
