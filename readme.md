@@ -1,4 +1,4 @@
-#Internsheep
+# Internsheep
 
 
 Internsheep adalah website dengan fitur untuk pencatatan mahasiswa yang akan atau sedang
@@ -32,7 +32,7 @@ Halaman Cek Pelaporan pada aplikasi Internsheep. Halaman ini bertujuan untuk men
 Halaman landing page atau halaman utama pada aplikasi Internsheep. Halaman ini bertujuan untuk memberikan infografis untuk melakukan pengajuan magang.
 ![img 4](assets/image/landing-page.jpg)
 
-#Admin Environtment
+# Admin Environtment
 
 *******
 1.  Tabel pendaftar
