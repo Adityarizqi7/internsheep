@@ -20,27 +20,44 @@
 	</div>
 
 	<?php if (!empty($keyword)) { ?>
-		<p style="color:orange"><b>Menampilkan data dengan kata kunci : "<?= $keyword; ?>"</b></p>
+		<p class="mt-5 montserrat text-center" style="color:orange"><b>Menampilkan data dengan kata kunci : "<?= $keyword; ?>"</b></p>
+
+		<div class="search-found-wrapper montserrat">
+			<div class="card-data mx-auto w-50 py-4">
+				<?php foreach ($data as $row) { ?>
+					<h1 class='title-data text-center fs-3 fw-semibold'>Data Kelompok</h1>
+					<div class='detail-data text-center w-75 mx-auto'>
+						<div class="d-flex flex-wrap gap-1 justify-content-between column-data mb-3">
+							<h3 class='fs-5 fw-semibold'>NPM Ketua :</h3>
+							<h3 class='fs-5'><?= $row['npm1'] ?></h3>
+						</div>
+						<div class="d-flex flex-wrap gap-1 justify-content-between column-data mb-3">
+							<h3 class='fs-5 fw-semibold'>Nama Ketua :</h3>
+							<h3 class='fs-5'><?= $row['name1'] ?></h3>
+						</div>
+						<div class="d-flex flex-wrap gap-1 justify-content-between column-data mb-3">
+							<h3 class='fs-5 fw-semibold'>Anggota 1 :</h3>
+							<h3 class='fs-5'><?= $row['name2'] ?></h3>
+						</div>
+						<div class="d-flex flex-wrap gap-1 justify-content-between column-data mb-3">
+							<h3 class='fs-5 fw-semibold'>Anggota 2 :</h3>
+							<h3 class='fs-5'><?= $row['name3'] ?></h3>
+						</div>
+						<div class="d-flex flex-wrap gap-1 justify-content-between column-data mb-3">
+							<h3 class='fs-5 fw-semibold'>Nama Perusahaan :</h3>
+							<h3 class='fs-5'><?= $row['perusahaan'] ?></h3>
+						</div>
+					</div>
+				<?php } ?>
+			</div>
+		</div>
+	<?php } else { ?>
+		<?php if($data = NULL) { ?>
+		<div class="search-not-found-wrapper montserrat mt-5">
+			<h1 class='title-data text-center fs-3 fw-semibold'>Data tidak ditemukan...</h1>
+		</div>
+		<?php } ?>
 	<?php } ?>
-	<table class="table">
-		<thead>
-			<tr>
-				<th scope="col">No</th>
-				<th scope="col">Nama Ketua Kelompok</th>
-				<th scope="col">Perusahaan</th>
-			</tr>
-		</thead>
-		<tbody>
-			<?php $no = 1 ?>
-			<?php foreach ($data as $row) { ?>
-				<tr>
-					<td><?= $no++ ?></td>
-					<td><?= $row['name1'] ?></td>
-					<td><?= $row['perusahaan'] ?></td>
-				</tr>
-			<?php } ?>
-		</tbody>
-	</table>
 
 	<!-- Tampilan ketika pencarian ditemukan -->
 	<!-- <div class="search-found-wrapper montserrat">

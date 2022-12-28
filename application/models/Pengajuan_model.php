@@ -51,28 +51,10 @@ class Pengajuan_model extends CI_Model
             "name3" => $this->input->post('name3'),
             "email3" => $this->input->post('email3'),
             "perusahaan" => $this->input->post('perusahaan'),
+            "files" => $this->input->post('files'),
         );
         $this->db->insert($this->table, $data);
     }
-
-    // public function update()
-    // {
-
-    //     $data = array(
-    //         "npm1" => $this->input->post('npm1'),
-    //         "name1" => $this->input->post('name1'),
-    //         "email1" => $this->input->post('email1'),
-    //         "npm2" => $this->input->post('npm2'),
-    //         "name2" => $this->input->post('name2'),
-    //         "email2" => $this->input->post('email2'),
-    //         "npm3" => $this->input->post('npm3'),
-    //         "name3" => $this->input->post('name3'),
-    //         "email3" => $this->input->post('email3'),
-    //         "perusahaan" => $this->input->post('perusahaan'),
-    //     );
-    //     $this->db->where('id_pengajuan', $this->input->post('id_pengajuan'));
-    //     $this->db->update('pengajuan', $data);
-    // }
 
     function update($id, $data)
     {

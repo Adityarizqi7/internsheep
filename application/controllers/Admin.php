@@ -10,6 +10,7 @@ class Admin extends CI_Controller
 		$this->load->library('form_validation');
 		$this->load->model("Pengajuan_model");
 		$this->load->library('Templates');
+		$this->load->library('session');
 	}
 
 	public function index()
@@ -52,6 +53,12 @@ class Admin extends CI_Controller
 
 	public function dashboard()
 	{
+		if($this->session->userdata('username')){
+			// do something when exist
+	   }else{
+		   redirect('/admin');
+	   }
+
 		$queryallAjuan = $this->Pengajuan_model->getAll();
 		$DATA = array('queryallAjuan' => $queryallAjuan);
 
@@ -67,6 +74,12 @@ class Admin extends CI_Controller
 
 	public function editLaporan()
 	{
+		if($this->session->userdata('username')){
+			// do something when exist
+	   }else{
+		   redirect('/admin');
+	   }
+
 		$id = $this->input->post('id_pengajuan');
 		$npm1 = $this->input->post('npm1');
 		$name1 = $this->input->post('name1');
@@ -100,6 +113,12 @@ class Admin extends CI_Controller
 
 	public function deleteLaporan($id_pengajuan)
 	{
+		if($this->session->userdata('username')){
+			// do something when exist
+	   }else{
+		   redirect('/admin');
+	   }
+	   
 		$this->Pengajuan_model->delete($id_pengajuan);
 		$this->session->set_flashdata('message', '<div class="alert alert-danger text-center col-md-8 offset-md-2" role="alert">
                     Data berhasil dihapus! </div>');

@@ -24,7 +24,7 @@
         <nav class="navbar sticky-top navbar-expand-md bg-white shadow-sm py-4" style="padding-right: 17rem; padding-left: 17rem">
             <div class="container-fluid">
                 <a href="<?php echo base_url(); ?>" class="d-flex align-items-center text-dark text-decoration-none">
-                    <img src="assets/image/icon.png" />
+                    <img src="<?php echo base_url(); ?>assets/image/icon.png" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation_bar" aria-controls="navigation_bar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -120,7 +120,7 @@
                 <div class="row gy-4 gx-5">
                     <div class="col-lg-4 col-md-6">
                         <a href="/" class="mb-3">
-                            <img src="assets/image/icon.png" />
+                            <img src="<?php echo base_url(); ?>assets/image/icon.png" />
                         </a>
                         <p class="text-muted mt-3">&copy; 2022</p>
                     </div>
