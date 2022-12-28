@@ -1,71 +1,62 @@
 ###################
-What is CodeIgniter
+Internsheep
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Internsheep adalah website dengan fitur untuk pencatatan mahasiswa yang akan atau sedang
+melakukan program magang atau praktik kerja lainnya
 
 *******************
-Release Information
+1.  Login admin
 *******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+Halaman Login pada aplikasi Internsheep. Halaman ini berfungsi untuk memastikan bahwa yang mengakses aplikasi pada sisi admin adalah admin.
+![img 1](assets/image/login-admin.jpg)
 
 **************************
-Changelog and New Features
+2.	Halaman Daftar Pelaporan Data Magang
 **************************
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+Halaman Pengajuan pada aplkasi Internsheep. Halaman ini berfungsi untuk menginputkan data-data mahasiswa tiap individu atau kelompok serta berkas persyaratan pengajuan magang yang dibutuhkan.
+![img 2](assets/image/halaman-daftar.jpg)
 
 *******************
-Server Requirements
+3.	Cek Pelaporan
 *******************
 
-PHP version 5.6 or newer is recommended.
-
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+Halaman Cek Pelaporan pada aplikasi Internsheep. Halaman ini bertujuan untuk mengetahui dan mencari ajuan magang yang telah diinputkan oleh mahasiswa tiap individu atau kelompok.
+![img 3](assets/image/cek-laporan.jpg)
 
 ************
-Installation
+4.	Landing Page
 ************
 
-Please see the `installation section <https://codeigniter.com/userguide3/installation/index.html>`_
-of the CodeIgniter User Guide.
+Halaman landing page atau halaman utama pada aplikasi Internsheep. Halaman ini bertujuan untuk memberikan infografis untuk melakukan pengajuan magang.
+![img 4](assets/image/landing-page.jpg)
 
+###################
+Admin Environtment
+###################
 *******
-License
+1.  Tabel pendaftar
 *******
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+Halaman Pendaftaran Magang pada aplikasi Internsheep. Halaman ini berfungsi untuk melihat data pendaftar.
+![img 5](assets/image/tabel-pendaftar.jpg)
 
 *********
-Resources
+2.  Edit Data
 *********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Contributing Guide <https://github.com/bcit-ci/CodeIgniter/blob/develop/contributing.md>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
+Halaman Edit Data pada aplikasi Internsheep. Halaman berfungsi untuk melakukan perubahan data yang telah diajukan.
+![img 6](assets/image/edit-data.jpg)
 
 ***************
-Acknowledgement
+3.  Delete Data
 ***************
+Halaman Delete Data pada aplikasi Internsheep. Halaman ini berfungsi untuk menghapus data ajuan sesuai dengan kondisi yang diajukan.
+![img 7](assets/image/delete-data.jpg)
 
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+***************
+4.  Logout
+***************
+Halaman Logout pada aplikasi Internsheep. Halaman ini berfungsi untuk menghilangkan session atau keluar sebagai admin.
+![img 8](assets/image/logout.jpg)
