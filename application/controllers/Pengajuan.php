@@ -9,6 +9,7 @@ class Pengajuan extends CI_Controller
         parent::__construct();
         $this->load->model("Pengajuan_model");
         $this->load->library('form_validation');
+        $this->load->library('Templates');
     }
 
     public function add()
@@ -35,7 +36,7 @@ class Pengajuan extends CI_Controller
             'keyword'    => $keyword,
             'data'        => $data
         );
-        $this->load->view('cek-laporan', $data);
+        $this->templates->student('student/cekLaporan', $data);
 
         // $data['keyword'] = $this->input->get('keyword');
         // $this->load->model('Pengajuan_model');
