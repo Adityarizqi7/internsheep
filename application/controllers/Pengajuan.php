@@ -14,8 +14,8 @@ class Pengajuan extends CI_Controller
 
     public function add()
     {
-        $hosting = $this->Pengajuan_model;
-        $hosting->save();
+        $pengajuan = $this->Pengajuan_model;
+        $pengajuan->save();
 
         $this->session->set_flashdata('message', '
 			<div class="alert alert-success col-md-4 offset-md-4 poppins text-center" role="alert">
@@ -37,12 +37,39 @@ class Pengajuan extends CI_Controller
             'data'        => $data
         );
         $this->templates->student('student/cekLaporan', $data);
-
-        // $data['keyword'] = $this->input->get('keyword');
-        // $this->load->model('Pengajuan_model');
-
-        // $data['search_result'] = $this->article_model->search($data['keyword']);
-
-        // $this->load->view('cek-laporan', $data);
     }
+
+    // public function do_upload()
+    // {
+    //     $config['upload_path']          = base_url().'uploads/';
+    //     $config['allowed_types']        = 'gif|jpg|png';
+    //     $config['max_size']             = 100;
+    //     $config['max_width']            = 1024;
+    //     $config['max_height']           = 768;
+
+    //     $this->load->library('upload', $config);
+    //     $this->upload->initialize($config);
+
+    //     if (!$this->upload->do_upload('files')) {
+    //         $error = array('error' => $this->upload->display_errors());
+
+    //         $this->templates->student('student/pengajuan', $error);
+    //     } else {
+    //         $data = array('upload_data' => $this->upload->data());
+
+    //         // $this->load->view('upload_success', $data);
+    //         $pengajuan = $this->Pengajuan_model;
+    //         $pengajuan->save();
+    
+    //         $this->session->set_flashdata('message', '
+    //             <div class="alert alert-success col-md-4 offset-md-4 poppins text-center" role="alert">
+    //                 <strong>Success!</strong> Data ajuan berhasil diunggah.
+    //                 <button type="button" class="btn-close ml-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+    //             </div>
+    //         ');
+    
+    //         redirect("/");
+    //     }
+
+    // }
 }

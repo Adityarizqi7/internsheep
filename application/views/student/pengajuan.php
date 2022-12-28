@@ -7,8 +7,8 @@
 		<p class="mt-4 montserrat">Silahkan isi form di bawah ini dengan sebenar-benarnya dan jangan <br /> sampai ada yang terlewat ya</p>
 	</div>
 
-	<div class="content montserrat">
-		<form method="POST" action="<?= base_url('pengajuan/add') ?>" id="form-group" class="w-50 mx-auto">
+	<div class="content montserrat w-50 mx-auto">
+		<form method="POST" action="<?= base_url('pengajuan/add') ?>" id="form-group" class="">
 			<section class="mb-5 form-section">
 				<div class="heading-data d-flex gap-4 mb-4">
 					<h2 class="orange-base fw-bolder fs-5">01</h2>
@@ -72,9 +72,13 @@
 					<label for="perusahaan" class="form-label">Perusahaan</label>
 					<input type="text" class="form-control" name="perusahaan" id="perusahaan" placeholder="Angkasa Pura" aria-describedby="perusahaan">
 				</div>
+				<div class="form-data mb-3">
+					<label for="files" class="form-label">Surat Penerimaan</label>
+					<input type="file" size='20' class="form-control" name="files" id="files" placeholder="" aria-describedby="files">
+				</div>
 			</section>
 			<div class="text-center">
-				<button type="submit" class="w-100 mt-2 mx-auto button-primary text-white bg-orange-base">Submit Laporan</button>
+				<button type="submit" value="upload" class="w-100 mt-2 mx-auto button-primary text-white bg-orange-base">Submit Laporan</button>
 			</div>
 		</form>
 	</div>
